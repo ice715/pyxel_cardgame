@@ -6,12 +6,13 @@ class Real_card(Card):
         self.name = "Ramiel"
         self.lv = 2
         self.attribute = "a"
-        self.atk = 4
-        self.max_hp = 3
+        self.atk = 1
+        self.max_hp = 1
         self.hp = self.max_hp
         self.get_design_address()
     
-    def summon(self):
-        super().summon()
-        self.owner.hp += 3
+    def attacked(self, target):
+        self.hp += 1
+        return super().attacked(target)
+        
     

@@ -12,13 +12,14 @@ class Real_card(Card):
         self.rebornable = False
         self.get_design_address()
     
-    def summon(self):
-        super().summon()
+    def on_summon(self):
+        super().on_summon()
         self.rebornable = False
     
     def destruction(self):
+        if self.hp <= 0:
+            self.rebornable = True
         super().destruction()
-        self.rebornable = True
     
     def discard(self):
         super().discard()

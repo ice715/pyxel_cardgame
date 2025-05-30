@@ -11,7 +11,11 @@ class Real_card(Card):
         self.hp = self.max_hp
         self.get_design_address()
 
-    def summon(self):
-        super().summon()
-        self.attackable = True
+    def attacked(self):
+        self.hp = self.max_hp
+        super().attacked()
     
+    def destruction(self):
+        if self.hp <= 0:
+            self.owner.hp += 5
+        super().destruction()

@@ -6,12 +6,15 @@ class Real_card(Card):
         self.name = "griffon"
         self.lv = 4
         self.attribute = "c"
-        self.atk = 4
-        self.max_hp = 4
+        self.atk = 3
+        self.max_hp = 3
         self.hp = self.max_hp
         self.get_design_address()
 
-    def summon(self):
-        super().summon()
-        self.attackable = True
+    def on_summon(self):
+        super().on_summon()
+        for card in self.owner.field:
+            if card is None: continue
+            card.hp += 1
+            card.max_hp += 1
     

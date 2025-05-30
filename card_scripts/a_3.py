@@ -1,3 +1,4 @@
+import random
 from card import Card
 
 class Real_card(Card):
@@ -6,12 +7,14 @@ class Real_card(Card):
         self.name = "Gabriel"
         self.lv = 3
         self.attribute = "a"
-        self.atk = 6
-        self.max_hp = 5
+        self.atk = 2
+        self.max_hp = 3
         self.hp = self.max_hp
         self.get_design_address()
     
-    def summon(self):
-        super().summon()
-        self.owner.hp += 3
+    def on_summon(self):
+        super().on_summon()
+        if self.owner.graveyard:
+            card = random.choice(self.owner.graveyard)
+            card.reborn()
     

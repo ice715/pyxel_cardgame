@@ -11,7 +11,7 @@ class Real_card(Card):
         self.hp = self.max_hp
         self.get_design_address()
     
-    def summon(self):
-        super().summon()
+    def on_summon(self):
+        super().on_summon()
         self.owner.hp += 3
     
