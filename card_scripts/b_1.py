@@ -6,7 +6,7 @@ class Real_card(Card):
         self.name = "Adramelech"
         self.attribute = "b"
         self.lv = 1
-        self.atk = 3
+        self.atk = 1
         self.max_hp = 2
         self.hp = self.max_hp
 
@@ -14,6 +14,6 @@ class Real_card(Card):
     
     def attack(self, target):
         if self.attackable:
-            self.owner.opponent.hp -= 2
+            self.deal_damage(self.atk, self.owner.opponent)
         super().attack(target)
         

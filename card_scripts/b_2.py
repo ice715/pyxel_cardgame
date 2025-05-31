@@ -11,3 +11,5 @@ class Real_card(Card):
         self.hp = self.max_hp
         self.get_design_address()
     
+    def attack(self, target):
+        return super().attack(target)

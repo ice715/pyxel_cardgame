@@ -15,6 +15,6 @@ class Real_card(Card):
         if self.attackable:
             super().attack(target)
             if isinstance(target, Card) and (target.attribute == "c"):
-                target.hp = 0
+                target.animation = "destruction"
     
 

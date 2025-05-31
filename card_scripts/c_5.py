@@ -17,5 +17,5 @@ class Real_card(Card):
     
     def destruction(self):
         if self.hp <= 0:
-            self.owner.hp += 5
+            self.owner.hp += self.atk
         super().destruction()
