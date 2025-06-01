@@ -6,7 +6,7 @@ class Real_card(Card):
         self.name = "Odin"
         self.lv = 5
         self.attribute = "e"
-        self.atk = 5
+        self.atk = 6
         self.max_hp = 5
         self.hp = self.max_hp
         self.get_design_address()
@@ -14,7 +14,7 @@ class Real_card(Card):
     def on_fusion(self):
         super().on_fusion()
         self.deal_damage(5, self.owner)
-        self.owner.base_fusion_right += 1
-        self.owner.base_summon_right += 1
-        self.owner.base_attack_right += 1
+        self.owner.max_n_summon += 1
+        self.owner.max_n_fusion += 1
+    
 

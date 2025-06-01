@@ -13,5 +13,5 @@ class Real_card(Card):
     
     def attack(self, target):
         super().attack(target)
-        if target.hp < 0:
-            self.owner.opponent.hp += target.hp
+        if isinstance(target, Card) and (self.atk - target.hp > 0):
+            self.deal_damage(self.atk - target.hp, self.owner.opponent)

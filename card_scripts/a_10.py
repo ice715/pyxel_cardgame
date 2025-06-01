@@ -6,8 +6,8 @@ class Real_card(Card):
         self.name = "Metatron"
         self.lv = 10
         self.attribute = "a"
-        self.atk = 12 
-        self.max_hp = 12 
+        self.atk = 10 
+        self.max_hp = 11
         self.hp = self.max_hp
         self.get_design_address()
     

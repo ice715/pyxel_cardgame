@@ -7,8 +7,8 @@ class Real_card(Card):
         self.name = "Gabriel"
         self.lv = 3
         self.attribute = "a"
-        self.atk = 2
-        self.max_hp = 3
+        self.atk = 3
+        self.max_hp = 4
         self.hp = self.max_hp
         self.get_design_address()
     
@@ -18,3 +18,6 @@ class Real_card(Card):
             card = random.choice(self.owner.graveyard)
             card.reborn()
     
+    def on_fusion(self):
+        super().on_fusion()
+        self.on_summon()

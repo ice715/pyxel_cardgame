@@ -10,4 +10,7 @@ class Real_card(Card):
         self.max_hp = 12
         self.hp = self.max_hp
         self.get_design_address()
-
+    
+    def on_fusion(self):
+        super().on_fusion()
+        self.deal_damage(20, self.owner.opponent)

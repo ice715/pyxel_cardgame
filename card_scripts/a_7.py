@@ -6,12 +6,8 @@ class Real_card(Card):
         self.name = "Raphael"
         self.lv = 7
         self.attribute = "a"
-        self.atk = 9 
-        self.max_hp = 10 
+        self.atk = 7 
+        self.max_hp = 8
         self.hp = self.max_hp
         self.get_design_address()
-    
-    def summon(self):
-        super().summon()
-        self.owner.hp += 3
     

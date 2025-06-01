@@ -6,7 +6,7 @@ class Real_card(Card):
         self.name = "Cerberus"
         self.lv = 3
         self.attribute = "c"
-        self.atk = 3
+        self.atk = 4
         self.max_hp = 3
         self.hp = self.max_hp
         self.get_design_address()

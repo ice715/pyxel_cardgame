@@ -6,8 +6,8 @@ class Real_card(Card):
         self.name = "Kamael"
         self.lv = 4
         self.attribute = "a"
-        self.atk = 3
-        self.max_hp = 3
+        self.atk = 4
+        self.max_hp = 5
         self.hp = self.max_hp
         self.get_design_address()
     

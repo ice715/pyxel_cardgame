@@ -16,4 +16,8 @@ class Real_card(Card):
         if self.attackable:
             self.deal_damage(self.atk, self.owner.opponent)
         super().attack(target)
+
+    def attacked(self, target):
+        self.deal_damage(self.atk, self.owner.opponent)
+        super().attacked(target)
         

@@ -7,13 +7,13 @@ class Real_card(Card):
         self.lv = 5
         self.attribute = "c"
         self.atk = 6
-        self.max_hp = 6
+        self.max_hp = 5
         self.hp = self.max_hp
         self.get_design_address()
 
-    def attacked(self):
+    def attacked(self, target):
         self.hp = self.max_hp
-        super().attacked()
+        super().attacked(target)
     
     def destruction(self):
         if self.hp <= 0:
