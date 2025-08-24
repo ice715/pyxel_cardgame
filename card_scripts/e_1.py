@@ -12,6 +12,7 @@ class Real_card(Card):
         self.get_design_address()
     
     def attack(self, target):
-        super().attack(target)
-        if isinstance(target, Card) and (self.atk - target.hp > 0):
-            self.deal_damage(self.atk - target.hp, self.owner.opponent)
+        if self.attackable:
+            super().attack(target)
+            if isinstance(target, Card) and (self.atk - target.hp > 0):
+                self.deal_damage(self.atk - target.hp, self.owner.opponent)

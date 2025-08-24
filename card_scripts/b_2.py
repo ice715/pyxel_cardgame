@@ -6,10 +6,11 @@ class Real_card(Card):
         self.name = "Naamah"
         self.attribute = "b"
         self.lv = 2
-        self.atk = 1
-        self.max_hp = 1
+        self.atk = 3
+        self.max_hp = 2
         self.hp = self.max_hp
         self.get_design_address()
     
-    def attack(self, target):
-        return super().attack(target)
+    def attacked(self, target):
+        super().attacked(target)
+        self.function_queue.append((self.owner.fusion, (self, target)))

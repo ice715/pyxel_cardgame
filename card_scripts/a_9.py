@@ -1,6 +1,7 @@
+from importlib import import_module
 import random
 from card import Card
-from utils import len_with_out_none, import_real_card
+from utils import len_with_out_none
 
 class Real_card(Card):
     def __init__(self, owner):
@@ -25,7 +26,7 @@ class Real_card(Card):
             if card is None: continue
             if card.attribute == "a":
                 lv = card.lv
-                new_card = import_real_card('a', lv, self.owner)
-                card.animation_queue.append(("metamorphose", (new_card,)))
-                
-
+                target_card_module = import_module(f"card_scripts.b_{lv}")
+                target_card_cls = getattr(target_card_module, "Real_card")
+                target_card = target_card_cls(self.owner)  # 対象カードのインスタンスを生成
+                card.function_queue.append((card.metamorphose, (target_card,)))

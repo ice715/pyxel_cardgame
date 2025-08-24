@@ -1,0 +1,6 @@
+WIDTH, HEIGHT = 320, 240
+CARD_WIDTH, CARD_HEIGHT = 32, 48
+CARD_COLOR = 5
+MAX_LV = 10
+ATTRIBUTES = ("e", "c", "a", "b")
+DEBUG = True
