@@ -2,4 +2,4 @@ play: https://kitao.github.io/pyxel/wasm/launcher/?play=ice715.pyxel_cardgame.ap
 
 demo:
 
-<img src="demo.gif" width=400>
+<img src="Demo.gif" width=400>
